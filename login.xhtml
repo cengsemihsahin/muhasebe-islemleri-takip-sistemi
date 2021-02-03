@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login Sayfasi</title>
+    </h:head>
+    <h:body>
+        <h:form style="margin: 50px 40%;">
+            <table style="border: black 1px solid; padding: 10px;">
+                <tr>
+                    <td colspan="2" style="text-align: center;">Giris Yap</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Kullanici Adi:"></h:outputText></td>
+                    <td><h:inputText id="username" value="#{login.kullaniciAdi}"></h:inputText></td>
+                    <td><h:message for="username"></h:message></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Parola:"></h:outputText></td>
+                    <td><h:inputSecret id="password" value="#{login.parola}"></h:inputSecret></td>
+                    <td><h:message for="password"></h:message></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Kullanici Tipi:"></h:outputText></td>
+                    <td>
+                        <h:selectOneRadio value="#{login.kullaniciTipi}" required="true">
+                            <f:selectItem itemValue="1" itemLabel="admin" />
+                            <f:selectItem itemValue="2" itemLabel="mukellef" />
+                        </h:selectOneRadio>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><h:commandButton action="#{login.dogrulama()}" value="Giris"></h:commandButton></td>
+                    <td></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+
