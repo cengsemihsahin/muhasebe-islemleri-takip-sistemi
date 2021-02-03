@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Admin Paneli</title>
+        <h:outputStylesheet name="/css/mukellefTable.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <p style="text-align: center; display: block; float: left; margin: 0 20px 0 41%;">Merhaba <b>#{login.kullaniciAdi}</b></p>
+            <p style="text-align: center; display: block; float: left; margin: 0;"><h:commandLink action="#{login.logout}" value="Oturumu Kapat"></h:commandLink></p><br /><br /><br />
+            <p style="text-align: center; margin: 0;"><h:commandButton action="adminAddMukellef" value="Sisteme Mukellef Ekle" /></p><hr />
+            <div style="padding: 0 32%;">
+                <h:dataTable value="#{mukellefBean.mukellefRead}" var="m" styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                        #{m.mukellefID}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Kullanici Adi</f:facet>
+                        #{m.mukellefKullaniciAdi}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Parola</f:facet>
+                        #{m.mukellefParola}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Vergi Borcu</f:facet>
+                        #{m.mukellefBorc} TL
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Islemler</f:facet>
+                        <i style="margin: 0 5px 0 0;"><h:commandButton action="#{mukellefBean.mukellefUpdateForm(m)}" value="Guncelle" /></i>
+                        <h:commandButton action="#{mukellefBean.mukellefSil(m)}" value="Mukellefi Sil" />
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
