@@ -5,4 +5,4 @@ JSF MySQL JDBC
 Muhasebe İşlemleri Takip Sistemi Projesi / BİL4005 İnternet Mühendisliği dersi Bütünleme Proje Ödevi</i>
 
 
-<p><a href="https://esemihsahin.gitbook.io/jsfmuhasebeprojesi/">Gitbook Link</a>
+<p><a href="https://esemihsahin.gitbook.io/jsfmuhasebeprojesi/" target="_blank">Gitbook Link</a>
